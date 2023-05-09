@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--body-bg: #f5f7fb;
+	--text: #293264;
+	--blue: #4d5b9e; /* text color and button background */
+	--blue-ligth: #d6dbf5; /* answers background */
+	--grey: #dbdef0; /* question group border */
+	--green: #94d7a2; /* correct answer background */
+	--red: #f7d9db; /* wrong answer background */
+	--violet-light: #a1a9cc; /* non-selected answers border and text color */
+}
+
+body {
+	font-family: 'Poppins', 'Inter', sans-serif;
+	font-size: 16px;
+	line-height: 23px;
+	color: var(--text);
+	background-color: #6b6b6b;
+}
+
+#container {
+	width: 60%;
+	margin: auto;
+	min-height: 100vh;
+	padding: 3rem 5rem;
+	border-radius: 10px;
+	background-color: var(--body-bg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+@media only screen and (max-width: 968px) {
+	#container {
+		width: 100%;
+	}
+}
+#container.container-flex {
+	align-items: flex-start;
+}
+
+.intro-page {
+	text-align: center;
+	height: 100%;
+}
+
+.intro-page > p {
+	margin: 1.5rem 0;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+.btn {
+	height: 44px;
+	background-color: var(--blue);
+	border-radius: 10px;
+	font-family: 'Inter', 'Poppins', sans-serif;
+	font-size: 16px;
+	line-height: 23px;
+	color: var(--body-bg);
+	border: none;
+	min-width: 140px;
+	max-width: 164px;
+	cursor: pointer;
+	text-align: center;
+	transition: all 0.4s ease;
+}
+.btn:active {
+	transform: translateY(3px);
+}
+
+#check-btn {
+	display: none;
+}
+
+.questions-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.results-and-score {
+	display: none;
+	align-items: center;
+	gap: 1rem;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+#score {
+}
+
+.questions-group {
+	width: 100%;
+}
+
+.question {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.answers {
+	margin: 1.5rem 0;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+
+	gap: 10px;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid var(--grey);
+}
+
+.answer {
+	border: 1px solid var(--blue);
+	border-radius: 15px;
+	padding: 3px 1rem;
+	font-size: 14px;
+	cursor: pointer;
+}
+/* on click class to be added */
+.answer.selected {
+	border-color: var(--blue-ligth);
+	background-color: var(--blue-ligth);
+}
+/* on click class to be added if not selected*/
+.answer.non-selected {
+	border-color: var(--blue-ligth);
+	color: var(--blue-ligth);
+}
+/* on click class to be added if correct*/
+.answer.correct {
+	border-color: var(--green);
+	background-color: var(--green);
+}
+/* on click class to be added if wrong*/
+.answer.incorrect {
+	border-color: var(--red);
+	background-color: var(--red);
+	color: var(--blue);
+}
+
+.footer > span {
+	font-size: 18px;
+	margin-right: 1rem;
+}
